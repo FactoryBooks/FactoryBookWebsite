@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="FactoryBook — simple factory management software for stock, materials, manufacturing and daily reports."
+    >
+    <link rel="icon" type="image/x-icon" href="FactoryBook.svg">
+
+    <title>FactoryBook — Factory Management Software</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="#" class="brand">
+            <img src="FactoryBook.svg" alt="FactoryBook logo">
+            <span>FactoryBook</span>
+        </a>
+
+        <a href="#features" class="features-link">
+            Features
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    FACTORY MANAGEMENT SOFTWARE
+                </div>
+
+                <h1>
+                    Simple tools for
+                    <span>better factory operations.</span>
+                </h1>
+
+                <p class="subtitle">
+                    Manage stock, material movement, manufacturing
+                    and daily reports — all in one simple application.
+                </p>
+
+                <a
+                    class="download-button"
+                    href="https://factorybook-download.factorybook-download.workers.dev/download"
+                >
+                    <span class="download-symbol">↓</span>
+
+                    <span class="download-text">
+                        <strong>Download for Windows</strong>
+                        <small id="download-version">
+                            Checking latest version...
+                        </small>
+                    </span>
+                </a>
+
+                <div class="quick-points">
+
+                    <span>✓ Offline</span>
+                    <span>✓ Simple</span>
+                    <span>✓ Automatic updates</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="features" class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    01
+                </div>
+
+                <div>
+                    <h2>Stock Management</h2>
+
+                    <p>
+                        Keep stock items organized and
+                        easily track your materials and goods.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    02
+                </div>
+
+                <div>
+                    <h2>Material Movement</h2>
+
+                    <p>
+                        Record material received and
+                        dispatched during daily operations.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    03
+                </div>
+
+                <div>
+                    <h2>Manufacturing</h2>
+
+                    <p>
+                        Record consumption and production
+                        in a simple workflow.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    04
+                </div>
+
+                <div>
+                    <h2>Daily Reports</h2>
+
+                    <p>
+                        Keep a clear daily record of
+                        factory activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <span>FactoryBook</span>
+
+        <span>
+            © 2026 FactoryBook
+        </span>
+
+    </footer>
+
+
+    <script>
+
+        const versionUrl =
+            "https://factorybook-download.factorybook-download.workers.dev/version";
+
+        async function loadVersion() {
+
+            const versionElement =
+                document.getElementById("download-version");
+
+            try {
+
+                const response =
+                    await fetch(versionUrl);
+
+                if (!response.ok) {
+                    throw new Error("Version request failed");
+                }
+
+                const data =
+                    await response.json();
+
+                versionElement.textContent =
+                    "Latest version · " +
+                    (data.version || "Latest");
+
+            } catch (error) {
+
+                versionElement.textContent =
+                    "Latest version available";
+
+            }
+
+        }
+
+        loadVersion();
+
+    </script>
+
+</body>
+</html>
